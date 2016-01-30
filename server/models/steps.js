@@ -8,10 +8,11 @@ var StepSchema = new Schema({
     createdAt: {type: Date, 'default': Date.now},
     updatedAt: {type: Date, 'default': Date.now},
     // each step count has one user
-    user: {type: Schema.ObjectId, ref: "User", childPath: "steps"}
+    user: {type: String, required: true}
+    //user: {type: Schema.ObjectId, ref: "User", childPath: "steps"}
 });
 
-StepSchema.plugin(relationship, {relationshipPathName: 'users'});
+//StepSchema.plugin(relationship, {relationshipPathName: 'users'});
 
 var StepModel = mongoose.model('Steps', StepSchema);
 
