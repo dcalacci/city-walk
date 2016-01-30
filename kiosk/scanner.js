@@ -19,7 +19,17 @@ function maybeSendScan(macAddress, app) {
 
 function startScanning(app) {
     noble.state = "poweredOn";
+
     noble.startScanning();
+    setInterval(function() {
+        winston.log("info", "scanning...");
+        // no idea why this doesnt work
+        setTimeout(function() {
+            noble.stopScanning();
+        }, 15000);
+        noble.startScanning();
+    }, 20000);
+    
     winston.log("info", 'scanning!');
 
     noble.on("discover", function(peripheral) { 
