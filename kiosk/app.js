@@ -6,7 +6,17 @@ var feathers = require('feathers-client'),
 var scanner = require('./scanner');
 
 
-var socket = io('18.85.24.150:3000');
+window.state.url = "18.85.24.150:3000";
+
+// set up raw socket for custom events.
+var socket = io.connect(window.state.url, {'transports': [
+    'websocket',
+    'flashsocket',
+    'jsonp-polling',
+    'xhr-polling',
+    'htmlfile'
+]});
+
 var app = feathers()
     .configure(feathers.socketio(socket));
 
