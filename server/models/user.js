@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 
 var UserSchema = new Schema({
     email: {type: String, required: true, unique: true},
-    name: {type: String, required: true},
+    username: {type: String, required: true},
     password: {type: String, required: true},
     macAddress: {type: String, required: true},
     // each user can have multiple kiosks
