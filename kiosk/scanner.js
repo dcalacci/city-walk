@@ -12,7 +12,6 @@ function startScanning() {
     });
 }
 
-
 module.exports = {
     startScanning: startScanning  
 };

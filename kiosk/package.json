@@ -1,0 +1,18 @@
+{
+  "name": "kiosk",
+  "version": "1.0.0",
+  "description": "Kiosk for cityWalk project",
+  "main": "app.js",
+  "dependencies": {
+    "feathers-client": "^0.5.1",
+    "noble": "^1.3.0",
+    "require": "^2.4.20",
+    "socketio": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dan Calacci",
+  "license": "ISC"
+}
