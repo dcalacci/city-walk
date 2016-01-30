@@ -10,7 +10,7 @@ var crypto = require('crypto');
 var hooks = require('feathers-hooks');
 var memory = require('feathers-memory');
 var session = require('express-session');
-var feathersPassport = require('../lib/passport');
+var feathersPassport = require('feathers-passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 // export app as module so we can require it later.
@@ -18,6 +18,7 @@ var app = module.exports = feathers();
 
 var User = require('./models/user');
 var Kiosk = require('./models/kiosk');
+var Steps = require('./models/steps');
 
 
 // DATABASE
@@ -152,17 +153,32 @@ passport.use(new LocalStrategy(function(username, password, done) {
 // Create a user that we can use to log in
 userService.create({
     username: 'test',
-    password: 'secret'
+    password: 'secret',
+    macAddress: 'a09169979149',
+    email: 'dan@dcalacci.net'
 }, {}, function(error, user) {
+    console.log("error?", error);
     console.log('Created default user', user);
 });
+
+
 
 ////////////////////////////////////////////////////////////////
 
 app.use('/kiosks', mongooseService({ Model: Kiosk }));
+app.use('/steps', mongooseService({ Model: Steps }));
 
 app.listen(port, function() {
     console.log('Feathers server listening on port ' + port);
+});
+
+
+app.service('/steps').on("create", function() {
+    winston.log("info", "new steps created!");
+});
+
+app.service('/kiosks').on("create", function() {
+    winston.log("info", "new steps created!");
 });
 
 // configure all hooks
