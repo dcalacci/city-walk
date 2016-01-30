@@ -11,7 +11,6 @@ var User = require('./models/user');
 var Kiosk = require('./models/kiosk');
 
 
-
 // Tell mongoose to use native promises
 // See http://mongoosejs.com/docs/promises.html
 mongoose.Promise = global.Promise;
