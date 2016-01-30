@@ -1,7 +1,7 @@
 var feathers = require('feathers-client'),
     winston = require('winston'),
     noble = require('noble'),
-    io = require('socketio');
+    io = require('socket.io-client');
 
 var scanner = require('./scanner');
 
@@ -16,6 +16,10 @@ var socket = io.connect(url, {'transports': [
     'xhr-polling',
     'htmlfile'
 ]});
+
+socket.on("connect", function() {
+    winston.log("info", "connected!");
+});
 
 var app = feathers()
     .configure(feathers.socketio(socket));

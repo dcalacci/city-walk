@@ -1,4 +1,5 @@
 var noble = require('noble'),
+    winston = require('winston'),
     _ = require('underscore'),
     app = require('./app.js');
 
@@ -19,6 +20,7 @@ function maybeSendScan(macAddress) {
 function startScanning() {
     noble.state = "poweredOn";
     noble.startScanning();
+    winston.log("info", 'scanning!');
 
     noble.on("discover", function(peripheral) { 
         var macAddress = peripheral.uuid;
