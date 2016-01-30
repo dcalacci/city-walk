@@ -1,7 +1,7 @@
 var noble = require('noble'),
     winston = require('winston'),
     _ = require('underscore'),
-    app = require('./app.js');
+    app = require('./app');
 
 
 
