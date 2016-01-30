@@ -6,8 +6,6 @@ var feathers = require('feathers-client'),
 var scanner = require('./scanner');
 
 
-var app = module.exports = feathers();
-
 var url = "18.85.24.150:3000";
 
 // set up raw socket for custom events.
@@ -24,9 +22,7 @@ socket.on("connect", function() {
 });
 
 
-
-
-app.configure(feathers.socketio(socket));
+var app = feathers().configure(feathers.socketio(socket));
 
 var userService = app.service('users');
 var kioskService = app.service('kiosks');
@@ -38,6 +34,7 @@ var thisKiosk = {
     mac: "",
     users: []
 };
+
 
 function startup() {
     kioskService.find(
@@ -57,4 +54,4 @@ function startup() {
 
 
 
-scanner.startScanning();
+scanner.startScanning(app);

@@ -5,7 +5,7 @@ var noble = require('noble'),
 
 
 
-function maybeSendScan(macAddress) {
+function maybeSendScan(macAddress, app) {
     app.service('users').find(
         {
             query: {
@@ -17,7 +17,7 @@ function maybeSendScan(macAddress) {
 }
 
 
-function startScanning() {
+function startScanning(app) {
     noble.state = "poweredOn";
     noble.startScanning();
     winston.log("info", 'scanning!');
@@ -27,7 +27,7 @@ function startScanning() {
         var rss = peripheral.rssi;
         var localName = peripheral.advertisement.localName; 
         console.log('found device: ', macAddress, ' ', localName, ' ', rss);
-        maybeSendScan(macAddress);
+        maybeSendScan(macAddress, app);
     });
 }
 
