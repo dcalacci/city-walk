@@ -6,7 +6,7 @@ var noble = require('noble'),
 
 
 function maybeSendScan(macAddress) {
-    app.userService.find(
+    app.service('users').find(
         {
             query: {
                 macAddress: macAddress
