@@ -1,10 +1,45 @@
 var feathers = require('feathers-client'),
     winston = require('winston'),
     noble = require('noble'),
-    socketio = require('socketio');
+    io = require('socketio');
 
 var scanner = require('./scanner');
 
+
+var socket = io('18.85.24.150:3000');
+var app = feathers()
+    .configure(feathers.socketio(socket));
+
+var userService = app.service('users');
+var kioskService = app.service('kiosks');
+
+
+var thisKiosk = {
+    name: 'MIT Media Lab',
+    location: "75 Amherst Street, Cambridge, MA",
+    mac: "",
+    users: []
+};
+
+function startup() {
+    kioskService.find(
+        {
+            query: {
+                name: thisKiosk.name,
+                location: thisKiosk.location
+            }
+            
+        }
+    ).then(function(kiosks) {
+        if (kiosks.length == 0) {
+            kioskService.create(thisKiosk);
+        }
+    });
+}
+
+
+
 scanner.startScanning();
+
 
 
