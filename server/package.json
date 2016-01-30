@@ -4,17 +4,19 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "feathers-mongoose": "^3.0.4",
-    "express": "^4.13.4",
     "body-parser": "^1.14.2",
-    "feathers-memory": "^0.5.3",
-    "install": "^0.4.1",
-    "mongoose-type-email": "^1.0.0",
-    "mongoose": "^4.3.7",
+    "express": "^4.13.4",
     "feathers": "^1.3.0",
-    "winston": "^2.1.1",
+    "feathers-authentication": "^0.1.1",
+    "feathers-hooks": "^0.6.0",
+    "feathers-memory": "^0.5.3",
+    "feathers-mongoose": "^3.0.4",
+    "install": "^0.4.1",
+    "mongoose": "^4.3.7",
+    "mongoose-relationship": "^0.1.5",
+    "mongoose-type-email": "^1.0.0",
     "npm": "^3.6.0",
-    "mongoose-relationship": "^0.1.5"
+    "winston": "^2.1.1"
   },
   "devDependencies": {},
   "scripts": {

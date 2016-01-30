@@ -51,11 +51,14 @@ app.configure(feathers.rest())
     .use(feathers.static(__dirname + '/public'))
     // Turn on JSON parser for REST services
     .use(bodyParser.json())
-// Turn on URL-encoded parser for REST services
+    // Turn on URL-encoded parser for REST services
     .use(bodyParser.urlencoded({extended: true}));
 
-app.use('/user', mongooseService({ Model: User }));
-app.use('/kiosk', mongooseService({ Model: Kiosk }));
+
+app.use('/users', mongooseService({ Model: User }));
+
+app.use('/kiosks', mongooseService({ Model: Kiosk }));
+
 app.listen(port, function() {
     console.log('Feathers server listening on port ' + port);
 });
