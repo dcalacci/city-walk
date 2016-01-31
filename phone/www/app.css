@@ -1,0 +1,13 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+}
+h1 {
+  color: #4455EE;
+}
+.reactComponentContainer {
+  margin: 0 auto;
+  text-align: center;
+  border: solid;
+}
