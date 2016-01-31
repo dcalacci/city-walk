@@ -11,7 +11,7 @@ body {
 
 form {
   position: absolute;
-  right: 10px;
+  right: 0px;
   top: 10px;
 }
 
@@ -35,7 +35,48 @@ form {
 <!-- <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script> --> 
 <script>
 
-var margin = {top: 100, right: 10, bottom: 100, left: 10},
+//var text = d3.select("body").append("text").attr("x", 10);
+
+var mySquare = d3.select("body").append("svg").append("rect")
+  .attr("x",10)
+  .attr("y",-100)
+  .attr("width",60)
+  .attr("height",60)
+  .attr("fill", "purple"); 
+
+mySquare
+  .transition().duration(1000)
+  .attr("y",90);
+
+
+
+var mySquare_1 = d3.select("body").append("svg").append("rect")
+  .attr("x", 0)
+  .attr("y",-100)
+  .attr("width",120)
+  .attr("height",60)
+  .attr("fill", "orange").text('congra')
+  .style("stroke", "white"); 
+
+mySquare_1
+  .transition().delay(1500).duration(1000)
+  .attr("y",90); 
+
+
+var mySquare_2 = d3.select("body").append("svg").append("rect")
+  .attr("x", 0)
+  .attr("y",-100)
+  .attr("width",200)
+  .attr("height",60)
+  .attr("fill", "red").text('congra')
+  .style("stroke", "white"); 
+
+
+mySquare_2
+  .transition().delay(2500).duration(1000)
+  .attr("y",90).attr("x", 0); 
+
+var margin = {top: 0, right: 10, bottom: 100, left: 10},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -52,28 +93,6 @@ var div = d3.select("body").append("div")
     .style("height", (height + margin.top + margin.bottom) + "px")
     .style("left", margin.left + "px")
     .style("top", margin.top + "px");
-
-
-var mySquare = d3.select("body").append("svg").append("rect")
-  .attr("x",10)
-  .attr("y",500)
-  .attr("width",60)
-  .attr("height",60);
-
-mySquare
-  .transition().duration(2000)
-  .attr("y",100); 
-
-
-var mySquare_1 = d3.select("body").append("svg").append("rect")
-  .attr("x",100)
-  .attr("y",500)
-  .attr("width",120)
-  .attr("height",60);
-
-mySquare_1
-  .transition().duration(2000)
-  .attr("y",100); 
 
 
 d3.json("flare_1.json", function(error, root) {
