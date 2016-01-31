@@ -87,3 +87,11 @@ IOS/www/
 Android/bin/
 Android/gen/
 Android/assets/
+
+phone/platforms/android
+phone/ios-sim-master
+phone/ios-sim
+
+phone/platforms/ios
+
+phone/www_old
