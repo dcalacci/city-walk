@@ -20,16 +20,11 @@ mongoose.Promise = global.Promise;
 // Connect to your MongoDB instance(s)
 mongoose.connect('mongodb://localhost:27017/feathers');
 
-// A shared session store must be provided.
-// This MemoryStore is not recommended for production
-var store = new session.MemoryStore();
-
 
 ///////////////////////////
 var port = 3000;
 
 app.configure(feathers.rest())
-    .configure(hooks())
     .configure(feathers.socketio(function(io) {
 
         // enable all transports (optional if you want flashsocket support, please note that some hosting
