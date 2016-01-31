@@ -1,0 +1,22 @@
+{
+  "name": "www",
+  "homepage": "https://github.com/dcalacci/city-walk",
+  "authors": [
+    "Yan Leng <yleng@mit.edu>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "feathers-client": "^0.5.1",
+    "socket.io-client": "^1.4.5"
+  }
+}

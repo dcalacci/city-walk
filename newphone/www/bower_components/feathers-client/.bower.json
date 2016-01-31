@@ -1,0 +1,27 @@
+{
+  "name": "feathers-client",
+  "version": "0.5.1",
+  "repo": "feathersjs/feathers-client",
+  "keywords": [
+    "feathers",
+    "jquery",
+    "websocket",
+    "socket.io",
+    "ajax",
+    "rest",
+    "rel-time"
+  ],
+  "main": "dist/feathers.js",
+  "license": "MIT",
+  "homepage": "https://github.com/feathersjs/feathers-client",
+  "_release": "0.5.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.5.1",
+    "commit": "7dc5f5834fd548d8ee3bf291e933167685911476"
+  },
+  "_source": "git://github.com/feathersjs/feathers-client.git",
+  "_target": "^0.5.1",
+  "_originalSource": "feathers-client",
+  "_direct": true
+}
