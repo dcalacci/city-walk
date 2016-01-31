@@ -71,6 +71,7 @@ app.configure(feathers.rest())
 
         io.on('connection', function(socket) {
             socket.on('connect', function() {
+                winston.log("info", ">>>>> Client connected");
             });
             
             socket.on('disconnect', function() {
@@ -85,8 +86,6 @@ app.configure(feathers.rest())
     .use(bodyParser.json())
     // Turn on URL-encoded parser for REST services
     .use(bodyParser.urlencoded({extended: true}));
-
-
 
 
 
