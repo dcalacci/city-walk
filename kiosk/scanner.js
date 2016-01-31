@@ -12,6 +12,13 @@ function maybeSendScan(macAddress, app) {
                 macAddress: macAddress
             }
         }).then(function(users) {
+            var user = users[0];
+            app.service('scans').create(
+                {
+                    user: user._id,
+                    kiosk: "kiosk1"
+                }
+            );
             console.log('Users walked by:', users);
     });
 }
