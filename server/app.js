@@ -129,14 +129,25 @@ passport.use(new LocalStrategy(function(username, password, done) {
     };
 
     userService.find({ query: query }, function(error, users) {
+        winston.log("info", "trying to find user...");
         if(error) {
+            winston.log("info", "error in finding user...");
             return done(error);
         }
 
         var user = users[0];
 
         if(!user) {
-            return done(new Error('User not found'));
+            winston.log("info", "user not found, creating one...");
+            userService.create({
+                username: username,
+                password: password,
+                macAddress: "test",
+                email: "test"
+            }, {}, function(error, user) {
+                winston.log("info", error, user);
+                done(null, user);
+            });
         }
 
         // Compare the hashed password

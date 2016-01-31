@@ -1,7 +1,13 @@
 var React = require("react");
+var ReactDOM = require("react-dom");
 var Tabs = require("material-ui/lib/tabs/tabs");
 var Tab = require("material-ui/lib/tabs/tab");
 var Slider = require("material-ui/lib/slider");
+/* var Map = require("./mapboxMap").Map; */
+
+var LoginForm = require("login/loginComponents").Form;
+
+
 
 // tap plugin!
 var injectTapEventPlugin = require("react-tap-event-plugin");
@@ -20,20 +26,12 @@ function handleActive(tab) {
     console.log(`A tab with this route property ${tab.props.route} was activated.`);
 }
 
+
 var TabsExampleSimple = function() {
     return (
     <Tabs>
-        <Tab label="Map" >
-            <div>
-                <h2 style={styles.headline}>Map</h2>
-                <p>
-                    This is an example tab.
-                </p>
-                <p>
-                    You can put any sort of HTML or react component in here. It even keeps the component state!
-                </p>
-                <Slider name="slider0" defaultValue={0.5} />
-            </div>
+        <Tab label="Login" >
+            <LoginForm url="18.111.9.233:3000/login"></LoginForm>
         </Tab>
         <Tab label="Nearby" >
             <div>
@@ -47,8 +45,7 @@ var TabsExampleSimple = function() {
         <Tab
             label="My Activity"
             route="/home"
-            onActive={handleActive}
-        >
+            onActive={handleActive}>
             <div>
                 <h2 style={styles.headline}>My Activity</h2>
                 <p>

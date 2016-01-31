@@ -4,7 +4,6 @@ var React = require("react");
 var AppBar = require('material-ui/lib/app-bar');
 
 
-
 var Footer = React.createClass({
   render: function() {
     return (
@@ -31,3 +30,4 @@ var AppBar = React.createClass({
 
 exports.AppBar = AppBar;
 exports.Footer = Footer;
+
