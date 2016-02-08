@@ -44,10 +44,12 @@ function startScanning(app) {
         var rss = peripheral.rssi;
         var localName = peripheral.advertisement.localName; 
         console.log('found device: ', macAddress, ' ', localName, ' ', rss);
-        maybeSendScan(macAddress, app);
+        // maybeSendScan(macAddress, app);
     });
 }
 
 module.exports = {
     startScanning: startScanning  
 };
+
+// startScanning(null);

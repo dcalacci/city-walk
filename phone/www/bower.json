@@ -1,0 +1,22 @@
+{
+  "name": "www",
+  "homepage": "https://github.com/dcalacci/city-walk",
+  "authors": [
+    "Dan Calacci <dan@dcalacci.net>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "leaflet": "^0.7.7"
+  }
+}

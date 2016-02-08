@@ -6,7 +6,7 @@ var feathers = require('feathers-client'),
 var scanner = require('./scanner');
 
 
-var url = "18.111.9.233:3000";
+var url = "104.131.120.222";
 
 // set up raw socket for custom events.
 var socket = io.connect(url, {'transports': [
@@ -28,6 +28,8 @@ var userService = app.service('users');
 var kioskService = app.service('kiosks');
 
 
+
+
 var thisKiosk = {
     name: 'MIT Media Lab',
     location: "75 Amherst Street, Cambridge, MA",
@@ -35,8 +37,15 @@ var thisKiosk = {
     users: []
 };
 
+socket.emit("kiosk::create", thisKiosk, function(error, data) {
+    console.log(error, data);
+});
+
+kioskService.create(thisKiosk);
+
 
 function startup() {
+    console.log("starting up..");
     kioskService.find(
         {
             query: {
@@ -46,6 +55,7 @@ function startup() {
             
         }
     ).then(function(kiosks) {
+        console.log("got kiosks:");
         if (kiosks.length == 0) {
             kioskService.create(thisKiosk);
         }
@@ -53,5 +63,5 @@ function startup() {
 }
 
 
-
+startup();
 scanner.startScanning(app);

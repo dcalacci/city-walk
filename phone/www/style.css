@@ -1,0 +1,18 @@
+#map {
+    height: 600px;
+    padding: 0px;
+}
+
+.nav-row {
+    width: 100%;
+    padding: 0px;
+}
+
+#tab-col {
+    padding: 0px;
+}
+
+#maptab {
+    min-height: 600px;
+    padding: 0px;
+}

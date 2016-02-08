@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title>CityWalk</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../../bower_components/Materialize/dist/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link rel="stylesheet" href="../../style.css" />
+    </head>
+    
+    <body>
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">CityWalk</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Navbar Link</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="account.html">My Profile</a></li>
+                    <li><a href="activity.html">My Activity</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+        <div class="row">
+          <form class="col s12" id="loginForm">
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Username" id="username" type="text" class="validate">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Email" id="email" type="text" class="validate">
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input placeholder="Password" id="password" type="password" class="validate">
+              </div>
+            </div>
+            <input type="submit" <a id="submitButton" class="waves-effect waves-light btn"></a>
+          </form>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="bower_components/feathers-client/dist/js/feathers.js"></script>
+    <script src="bower_components/socket.io-client/socket.io.js"></script>
+    <script src="login.js"></script>
+</html>

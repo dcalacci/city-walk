@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-        <title>CityWalk</title>
+        <title>Starter Template - Materialize</title>
 
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,10 +11,9 @@
         <link href='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
         <link rel="stylesheet" href="style.css" />
     </head>
-    
     <body>
         <nav class="light-blue lighten-1" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">CityWalk</a>
+            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="#">Navbar Link</a></li>
                 </ul>
@@ -22,42 +21,15 @@
                 <ul id="nav-mobile" class="side-nav">
                     <li><a href="account.html">My Profile</a></li>
                     <li><a href="activity.html">My Activity</a></li>
-                    <li><a href="components/login/login.html">Log In</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
         </nav>
-        <div class="nav-row row">
-            <div class="col s12" id="tab-col">
-                <ul class="tabs">
-                    <li class="tab col s4"><a href="#nearby"><span>Nearby</span></a></li>
-                    <li class="tab col s4"><a href="#bletab"><span>BlE</span></a></li>
-                    <li class="tab col s4"><a class="active" href="#maptab"><span>Map</span></a></li>
-                </ul>
-
-            </div>
-
-            <div class="col s12" id="bletab">
-                <a class="waves-effect waves-light btn" id="ble-button">Stuff</a>
-            </div>
-            
-            <div class="col s12" id="maptab">
-                <div id="map" class="map">
-                </div>
-            </div>
-        </div>
-        
 
         <!--  Scripts-->
         <script src="cordova.js"></script>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="bower_components/Materialize/dist/js/materialize.js"></script>
-        <script src="bower_components/feathers-client/dist/js/feathers.js"></script>
-        <script src="bower_components/socket.io-client/socket.io.js"></script>
-        <script src="https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js"></script>
-        <script src="js/map.js"></script>
         <script src="js/activity.js"></script>
-        <script src="js/init.js"></script>
-
     </body>
 </html>
