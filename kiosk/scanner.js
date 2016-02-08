@@ -33,9 +33,9 @@ function startScanning(app) {
         // no idea why this doesnt work
         setTimeout(function() {
             noble.stopScanning();
-        }, 15000);
+        }, 10000);
         noble.startScanning();
-    }, 20000);
+    }, 15000);
     
     winston.log("info", 'scanning!');
 
